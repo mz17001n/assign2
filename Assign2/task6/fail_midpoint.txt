@@ -1,0 +1,7 @@
+The numbers I used were '5' and '2147483647' to fail the midpoint_original test. These numbers translated to binary are '5' = '0b00000000000000000000000000000101'. 
+2147483647 in binary is '0b01111111111111111111111111111111'. So in binary. the expected midpoint of these numbers is expected to be '0b01000000000000000000000000000010'.
+It seems tho that midpoint_original did not calculate the midpoint correctly when it does x + y becuase the result of 0b00000000000000000000000000000101 + 0b01000000000000000000000000000010 =
+0b10000000000000000000000000000100. This results in an error. Midpoint_A on the other hand, fails for a different reason than midpoint_original does. This time I used 
+the numbers '5' and '-2147483647' for this calculation, This test failed bcuz '5' in binary is '0b00000000000000000000000000000101' and '-2147483647' is '0b10000000000000000000000000000001'.
+So the midpoint of these numbers should be '0b11000000000000000000000000000011'. But, midpoint_A failed because the result it gives is 0b00000000000000000000000000000101 - 0b10000000000000000000000000000001
+which is also not right for this solution.
